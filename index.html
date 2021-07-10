@@ -4,6 +4,7 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
+
 html, body {
     height: 100%;
 }
@@ -15,12 +16,13 @@ html {
 </style>
 
 <body width="100%" style="background-color: purple;">
-	<input style="width:150px; height:100px; font-size:25" type="button" onclick="start()" value="Start!"/>
+	<input id="startButton" style="width:150px; height:100px; font-size:33" type="button" onclick="start()" value="Start!"/>
 </body>
 
 <script>
 function start() {
 	document.started = true;
+	document.getElementById("startButton").style.display = "none";
 }
 
 window.addEventListener('load', (event) => {
@@ -28,7 +30,5 @@ window.addEventListener('load', (event) => {
 	document.won = false;
 	document.started = false;
 });
-
-window.
 
 </script>
