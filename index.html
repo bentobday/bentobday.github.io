@@ -16,9 +16,10 @@ html {
 </style>
 
 <body width="100%" style="background-color: purple;">
-	<h1 style="position: absolute; top: 50px">Imps Remaining: 8</h1>
 
+	<h1 id="counter" style="font-size: 50; top: 50px; left: 100px; position: absolute">Imps remaining: 8</h1>
 	<input id="startButton" style="width:150px; height:100px; font-size:33" type="button" onclick="start()" value="Start!"/>
+	<img id="https://github.com/bentobday/bentobday.github.io/blob/main/cake.png" style="display:none" src="cake.png"/>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -41,8 +42,13 @@ function makeImp() {
 	$newdiv.on("click", function() {
 		$(this).remove();
 		document.killed++;
-		dcument.getElementById("counter").innerHTML = "Imps Remaining: "+(8-document.killed);
+		document.getElementById("counter").innerHTML = "Imps Remaining: "+(8-document.killed);
 	});
+
+	if(document.killed == 8) {
+		document.won = true;
+		return;
+	}
 	
 	$newdiv.css({
 		'position':'absolute',
@@ -60,7 +66,11 @@ function start() {
 	window.setInterval(function() {
 		if(!document.won) {
 			makeImp();
-			
+		} else {
+			document.getElementById("startButton").value="Happy Birthday! You're the best! :)"
+			document.getElementById("startButton").style.width = "auto";
+			document.getElementById("startButton").style.display = "inline";
+			document.getElementById("cake").style.display = "block";
 		}
 	}, 2000);
 	
