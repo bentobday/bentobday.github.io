@@ -42,7 +42,7 @@ function makeImp() {
 	$newdiv.on("click", function() {
 		$(this).remove();
 		document.killed++;
-		document.getElementById("counter").innerHTML = "Imps Remaining: "+(8-document.killed);
+		document.getElementById("counter").innerHTML = "Imps remaining: "+(8-document.killed);
 	});
 
 	if(document.killed == 8) {
